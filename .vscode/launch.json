@@ -1,0 +1,36 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "preLaunchTask": "rust: cargo build",
+        "type": "probe-rs-debug",
+        "request": "launch",
+        "name": "probe_rs rtt-target example",
+        "runtimeExecutable": "probe-rs",
+        //"probe": "2e8a:000c:E6614103E7228624",
+        "runtimeArgs": ["dap-server"],
+        "connectUnderReset": false,
+        "flashingConfig": {
+          "flashingEnabled": true,
+          "haltAfterReset": false,
+          "formatOptions": {
+            //!MODIFY (or remove). Valid values are: 'bin', 'hex', 'elf'(default), 'idf'
+            "binaryFormat": "elf"
+          }
+        },
+        //!MODIFY
+        "chip": "RP2040",
+        "coreConfigs": [
+          {
+            //!MODIFY
+            "programBinary": "./target/thumbv6m-none-eabi/debug/rp-example",
+            "rttEnabled": true
+          }
+        ],
+          "env": {
+            //!MODIFY: Remove or use any of the supported DEFMT_LOG options.
+            "DEFMT_LOG": "debug"
+          }
+      }
+    ]
+  }
