@@ -7,7 +7,6 @@
         "request": "launch",
         "name": "probe_rs rtt-target example",
         "runtimeExecutable": "probe-rs",
-        //"probe": "2e8a:000c:E6614103E7228624",
         "runtimeArgs": ["dap-server"],
         "connectUnderReset": false,
         "flashingConfig": {
@@ -24,7 +23,8 @@
           {
             //!MODIFY
             "programBinary": "./target/thumbv6m-none-eabi/debug/rp-example",
-            "rttEnabled": true
+            "rttEnabled": true,
+            "svdFile": "rp2040.svd"
           }
         ],
           "env": {

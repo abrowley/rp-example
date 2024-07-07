@@ -1,6 +1,5 @@
 [package]
 name = "rp-example"
-version = "0.1.0"
 edition = "2021"
 
 [dependencies]
@@ -20,6 +19,9 @@ features = ["defmt", "unstable-pac", "time-driver", "critical-section-impl"]
 version = "0.3.1"
 features = ["defmt", "defmt-timestamp-uptime"]
 
+[dependencies.embassy-sync]
+version="0.6.0"
+features = ["defmt"]
 
 [dependencies.panic-probe]
 version = "0.3.1"
